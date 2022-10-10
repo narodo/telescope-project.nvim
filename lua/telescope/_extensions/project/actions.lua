@@ -168,7 +168,7 @@ end
 M.change_working_directory = function(prompt_bufnr)
   local project_path = M.get_selected_path(prompt_bufnr)
   actions.close(prompt_bufnr)
-  _utils.change_project_dir(project_path)
+  _utils.change_project_dir(project_path, true)
 end
 
 return transform_mod(M)
