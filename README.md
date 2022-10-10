@@ -97,6 +97,10 @@ lua require'telescope'.extensions.project.project{ display_type = 'full' }
 | `hidden_files`        | Show hidden files in selected project          | bool (default: false)    |
 | `order_by`            | Order projects by `asc`, `desc`, `recent`      | string (default: recent) |
 | `sync_with_nvim_tree` | Sync projects with nvim tree plugin            | bool (default: false)    |
+| `explicit_set_cwd`    | cwd only changed explicitly with `<c-l>` (or `w` in normal mode)* | bool (default: false) | 
+
+\* _by default all actions change the cwd to the newly selected project path._
+
 Setup settings can be added when requiring telescope, as shown below:
 
 ```lua
@@ -114,6 +118,7 @@ require('telescope').setup {
       theme = "dropdown",
       order_by = "asc",
       sync_with_nvim_tree = true, -- default false
+      explicit_set_cwd = false, --default false
     }
   }
 }
